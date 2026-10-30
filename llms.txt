@@ -1,0 +1,58 @@
+# Digitally Shifted
+
+> Digitally Shifted is a South African digital agency. We design, build, host and manage websites, and run the marketing that brings customers to them.
+
+Digitally Shifted works with businesses across South Africa. Its main offer is Website-as-a-Service: a website designed, hosted, and managed on one monthly plan. Prices are not published; every plan is quoted.
+
+## Services
+
+- [Website design and development](https://digitallyshifted.com/services/website-design-development/): A clear, fast website that explains what you do and turns visits into enquiries.
+- [Domains and hosting](https://digitallyshifted.com/services/domains-hosting/): Your domain, email and website on fast, secure LiteSpeed servers.
+- [Website management](https://digitallyshifted.com/services/website-management/): Updates, fixes and content changes, handled for you every month.
+- [Website-as-a-Service (WaaS)](https://digitallyshifted.com/waas/): Everything a working website needs, in one monthly plan.
+- [Marketing plan and execution](https://digitallyshifted.com/services/marketing-plan/): A clear plan for where to find customers, and the work to reach them.
+- [Paid advertising](https://digitallyshifted.com/services/paid-advertising/): Google and social media ads aimed at people who are ready to buy.
+- [Social media and PR](https://digitallyshifted.com/services/social-media-pr/): A steady, consistent presence on the channels your customers use.
+- [Brand and content creation](https://digitallyshifted.com/services/brand-content/): Logos, copy and graphics that look and sound like your business.
+- [Software development](https://digitallyshifted.com/services/software-development/): Custom tools and integrations when off-the-shelf software falls short.
+- [Machine learning and AI](https://digitallyshifted.com/services/machine-learning-ai/): Practical AI that saves time: assistants, automation and insight from your data.
+
+## Website-as-a-Service (WaaS)
+
+One monthly plan, quoted for each business ([details](https://digitallyshifted.com/waas/)). It includes:
+
+- Design and build: A website designed for your business and built to bring in enquiries.
+- Hosting and domain: LiteSpeed hosting, your domain and business email in one place.
+- Security: Imunify360 protection and SpamExperts email filtering.
+- Updates and changes: Software updates and content changes, handled by us.
+- Support: One team to call, email or WhatsApp when you need help.
+
+## The Digital Chain
+
+Twelve links from idea to growth, in order; the first missing link is the one to fix first ([check your chain](https://digitallyshifted.com/digital-chain/#check)).
+
+- Foundation: Corporate identity, Domain, Hosting, Cybersecurity. Who you are, where you live online, and how you stay safe.
+- Platform: Website, CMS, CRM and ERP. The website and the tools that run behind it.
+- Growth: Advertising, Social media and PR, Content creation, Analytics, SEO, Sales and growth. The work that brings customers in, and the data that shows it is working.
+
+## Contact
+
+- [Quote form](https://digitallyshifted.com/contact/)
+- Email: sales@digitallyshifted.com
+- Phone and WhatsApp: +27 63 171 8750
+
+## Blog
+
+- [Elevate your online presence: professional website development at Digitally Shifted](https://digitallyshifted.com/blog/elevate-your-online-presence-professional-website-development-at-digitally-shifted/): In today’s digital world, your website is more than just a part of your online presence—it’s a pivotal platform that drives customer interaction, sales, and business growth. At Digitally Shifted, we recognise that a compelling website is crucial for capturing and converting your audience. Our bespoke website development services are designed not only to meet your unique needs but to propel your business forward.
+- [Maximising ROI with precision: explore paid advertising with Digitally Shifted](https://digitallyshifted.com/blog/maximizing-roi-with-precision-explore-paid-advertising-with-digitally-shifted/): In the fast-evolving digital world, visibility is key to business growth. Paid advertising stands out as a robust tool to gain instant visibility and drive targeted traffic to your website. At Digitally Shifted, we specialise in crafting paid advertising strategies that not only increase exposure but also ensure you achieve a high return on investment (ROI).
+- [Unlock your online potential with Digitally Shifted: expert domain and hosting services](https://digitallyshifted.com/blog/unlock-your-online-potential-with-digitally-shifted-expert-domain-and-hosting-services/): Unlock the full potential of your online presence with Digitally Shifted’s premier domain and hosting services. Explore cutting-edge solutions with fast, reliable servers powered by LiteSpeed technology, enhanced security with Imunify360, and seamless email protection through SpamExperts.
+- [The ultimate digital marketing guide for businesses](https://digitallyshifted.com/blog/ultimate-digital-marketing-guide-for-businesses/): As a business owner, you need to be able to reach your target audience effectively and stand out in a crowded marketplace. That’s where digital marketing & digital marketing agencies like Digitally Shifted comes in. By utilising various online platforms and strategies, you can promote your business and grow your customer base. This guide will provide you with a comprehensive understanding of digital marketing strategies that can help your small business succeed.
+- [How to evaluate the effectiveness of your digital marketing efforts](https://digitallyshifted.com/blog/how-to-evaluate-the-effectiveness-of-your-digital-marketing-efforts/): Maximise your return on investment (ROI) by effectively measuring the success of your digital marketing campaigns. Learn the key steps, including setting KPIs, analysing data, and calculating ROI. Make informed decisions to drive business success.
+- [Stay ahead of the game: 2023’s top digital marketing trends](https://digitallyshifted.com/blog/stay-ahead-of-the-game-2023s-top-digital-marketing-trends/): Stay ahead of the curve in 2023 with the latest digital marketing trends. Customer-centric marketing, micro-influencer marketing, and social media storytelling are just a few of the must-watch trends for businesses looking to drive engagement and maximise their ROI. Stay on top of the game and make the most of these exciting opportunities in digital marketing.
+
+## Optional
+
+- [About](https://digitallyshifted.com/about/): the brand story and how the site is built
+- [Work](https://digitallyshifted.com/work/): client websites
+- [Accessibility](https://digitallyshifted.com/accessibility/)
+- [Privacy policy](https://digitallyshifted.com/privacy/)

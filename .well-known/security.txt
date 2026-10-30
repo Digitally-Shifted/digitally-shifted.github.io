@@ -1,0 +1,5 @@
+# Security contact for digitallyshifted.com (RFC 9116)
+Contact: mailto:info@digitallyshifted.com
+Expires: 2027-10-19T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://digitallyshifted.com/.well-known/security.txt
