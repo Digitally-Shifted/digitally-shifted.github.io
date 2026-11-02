@@ -1,0 +1,86 @@
+# digitallyshifted.com — static export served by LiteSpeed (Apache-compatible rules)
+
+Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+# Everything is UTF-8. Pages say so themselves; plain-text files (llms.txt, robots.txt,
+# .well-known/security.txt) and feeds get it from the server, so ’ and — never show as mojibake.
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .txt .xml .webmanifest
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # HTTPS everywhere, and www → apex (host-aware, so a staging subdomain stays on its own host)
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+  # Previous WordPress URLs → new routes
+  RewriteRule ^[0-9]{4}/[0-9]{2}/[0-9]{2}/([^/]+)/?$ /blog/$1/ [R=301,L]
+  RewriteRule ^contact-us/?$ /contact/ [R=301,L]
+  RewriteRule ^thank-you/?$ /contact/ [R=301,L]
+  RewriteRule ^privacy-policy/?$ /privacy/ [R=301,L]
+  RewriteRule ^category/[^/]+/?$ /blog/ [R=301,L]
+  RewriteRule ^(feed|comments/feed)/?$ /blog/feed.xml [R=301,L]
+  RewriteRule ^(wp-sitemap|sitemap_index|post-sitemap|page-sitemap|category-sitemap)\.xml$ /sitemap.xml [R=301,L]
+
+  # WordPress stays on disk after the switch (backed up, never deleted), but none of it is served or
+  # runs: its front page sends visitors home, every wp-* path and leftover file is gone (410), and
+  # quote.php is the only PHP that answers.
+  RewriteRule ^index\.php$ /? [R=301,L]
+  RewriteRule ^wp- - [G,L]
+  RewriteRule ^(readme\.html|license\.txt)$ - [G,L]
+  RewriteCond %{REQUEST_URI} !^/quote\.php$
+  RewriteRule \.php$ - [G,L]
+
+  # Directory routes end in a slash (trailingSlash export: /services/ → /services/index.html)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+</IfModule>
+
+# Any host other than the production domain (e.g. a staging subdomain) is kept out of search indexes.
+SetEnvIfNoCase Host "^(www\.)?digitallyshifted\.com$" DS_PRODUCTION
+
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow" env=!DS_PRODUCTION
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Isolates the site's browsing context from windows on other origins (no popups rely on window.opener).
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  # Same-origin only. 'unsafe-inline' is required by the inline Next.js bootstrap and React style attributes.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+  # Hashed build assets never change; everything else revalidates.
+  <FilesMatch "\.(html|txt|xml|webmanifest|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+<Files "feed.xml">
+  ForceType application/rss+xml
+</Files>
