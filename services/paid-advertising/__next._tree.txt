@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/2a0x8biddcnw2.css","style"]
+:HL["/_next/static/chunks/02lw07wvi9i53.css","style"]
 :HL["/brand/fonts/Raleway-Variable.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"paid-advertising","s":[]},"h":65632,"c":"$Q3"}]]
 1:[["children",{"s":"services","h":131136,"c":"$Q2"}]]
-0:{"b":"MgYjcJD7wrfTHxlaNV9pS","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
+0:{"b":"EYMO4PMDx9Uaj6ImgS8Y2","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}

@@ -2,14 +2,14 @@
 
 > Digitally Shifted is a South African digital agency. We design, build, host and manage websites, and run the marketing that brings customers to them.
 
-Digitally Shifted works with businesses across South Africa. Its main offer is Website-as-a-Service: a website designed, hosted, and managed on one monthly plan. Prices are not published; every plan is quoted.
+Digitally Shifted works with businesses across South Africa. Its main offer is Launch: a productized website build, live in 20 working days from complete content. After launch, the Care plan keeps the site hosted, managed, and current on one monthly price. Prices are not published; every plan is quoted.
 
 ## Services
 
 - [Website design and development](https://digitallyshifted.com/services/website-design-development/): A clear, fast website that explains what you do and turns visits into enquiries.
 - [Domains and hosting](https://digitallyshifted.com/services/domains-hosting/): Your domain, email and website on fast, secure LiteSpeed servers.
 - [Website management](https://digitallyshifted.com/services/website-management/): Updates, fixes and content changes, handled for you every month.
-- [Website-as-a-Service (WaaS)](https://digitallyshifted.com/waas/): Everything a working website needs, in one monthly plan.
+- [Care plan](https://digitallyshifted.com/waas/): Everything a working website needs, in one monthly plan.
 - [Marketing plan and execution](https://digitallyshifted.com/services/marketing-plan/): A clear plan for where to find customers, and the work to reach them.
 - [Paid advertising](https://digitallyshifted.com/services/paid-advertising/): Google and social media ads aimed at people who are ready to buy.
 - [Social media and PR](https://digitallyshifted.com/services/social-media-pr/): A steady, consistent presence on the channels your customers use.
@@ -17,15 +17,15 @@ Digitally Shifted works with businesses across South Africa. Its main offer is W
 - [Software development](https://digitallyshifted.com/services/software-development/): Custom tools and integrations when off-the-shelf software falls short.
 - [Machine learning and AI](https://digitallyshifted.com/services/machine-learning-ai/): Practical AI that saves time: assistants, automation and insight from your data.
 
-## Website-as-a-Service (WaaS)
+## Care plan
 
 One monthly plan, quoted for each business ([details](https://digitallyshifted.com/waas/)). It includes:
 
 - Design and build: A website designed for your business and built to bring in enquiries.
 - Hosting and domain: LiteSpeed hosting, your domain and business email in one place.
 - Security: Imunify360 protection and SpamExperts email filtering.
-- Updates and changes: Software updates and content changes, handled by us.
-- Support: One team to call, email or WhatsApp when you need help.
+- Updates and changes: Software updates, SEO basics, and the changes and new pages you ask for, under a fair usage policy.
+- Support: Remote email support, with one team to call or WhatsApp when you need help.
 
 ## The Digital Chain
 

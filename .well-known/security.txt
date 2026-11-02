@@ -1,5 +1,7 @@
 # Security contact for digitallyshifted.com (RFC 9116)
-Contact: mailto:info@digitallyshifted.com
+# Contact is the published sales mailbox (board decision 2026-11-02), monitored for enquiries.
+# Renew yearly BEFORE the Expires date, or the file stops being valid (reminder set 2026-11-02).
+Contact: mailto:sales@digitallyshifted.com
 Expires: 2027-10-19T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://digitallyshifted.com/.well-known/security.txt
