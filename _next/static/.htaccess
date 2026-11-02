@@ -1,0 +1,4 @@
+# Written by scripts/postbuild.mjs. Files here are content-hashed and never change.
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>
