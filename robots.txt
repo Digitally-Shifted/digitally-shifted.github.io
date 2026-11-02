@@ -1,6 +1,2 @@
-User-Agent: *
-Allow: /
-Disallow: /quote.php
-
-Host: https://digitallyshifted.com
-Sitemap: https://digitallyshifted.com/sitemap.xml
+User-agent: *
+Disallow: /
