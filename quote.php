@@ -100,6 +100,64 @@ if (count($hits) >= RATE_LIMIT) {
 $hits[] = $now;
 file_put_contents($bucket, implode(',', $hits), LOCK_EX);
 
+// reCAPTCHA v3 (optional, DIG-91 2026-11-03). Active only when BOTH are true:
+//   - this build shipped its activation marker: recaptcha-active.php next to this file, written by
+//     scripts/postbuild.mjs when the build was given a public site key (PUBLIC_RECAPTCHA_SITE_KEY,
+//     src/lib/recaptcha.ts). A dormant build sends no token field; its submissions pass, like before.
+//   - this host holds the secret, first found wins: getenv('RECAPTCHA_SECRET'), $_SERVER['RECAPTCHA_SECRET'],
+//     or a recaptcha-secret.php next to this file that returns it: <?php return 'the-secret';
+// The browser sends a token, or "unavailable" when it could not load reCAPTCHA (content blockers).
+// RECAPTCHA_VERIFY_URL (env) overrides the Google endpoint, for tests.
+function recaptcha_secret(): string
+{
+    $s = (string) (getenv('RECAPTCHA_SECRET') ?: '');
+    if ($s === '') {
+        $s = (string) ($_SERVER['RECAPTCHA_SECRET'] ?? '');
+    }
+    if ($s === '') {
+        $f = __DIR__ . '/recaptcha-secret.php';
+        if (is_file($f)) {
+            $v = include $f;
+            if (is_string($v)) {
+                $s = $v;
+            }
+        }
+    }
+    return $s;
+}
+
+$secret = recaptcha_secret();
+if ($secret !== '' && is_file(__DIR__ . '/recaptcha-active.php')) {
+    $token = line($data, 'recaptcha', 2048);
+    $answered = false;
+    $verified = false;
+    if ($token !== '' && $token !== 'unavailable') {
+        $url = (string) (getenv('RECAPTCHA_VERIFY_URL') ?: 'https://www.google.com/recaptcha/api/siteverify');
+        $ctx = stream_context_create(['http' => [
+            'method' => 'POST',
+            'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
+            'content' => http_build_query(['secret' => $secret, 'response' => $token]),
+            'timeout' => 5,
+            'ignore_errors' => true,
+        ]]);
+        $r = json_decode((string) @file_get_contents($url, false, $ctx), true);
+        if (is_array($r)) {
+            $answered = true;
+            $verified = ($r['success'] ?? false) === true
+                && (float) ($r['score'] ?? 0) >= 0.5
+                && (string) ($r['action'] ?? 'quote') === 'quote';
+        }
+    }
+    // An active build always sends a token field. None, or "unavailable" (the browser could not load
+    // reCAPTCHA, a content blocker say), does not verify — except when a real token was sent and Google
+    // itself could not be reached: then the checks above stand, rather than take the form down with Google.
+    $askedGoogle = $token !== '' && $token !== 'unavailable';
+    $transportFailed = $askedGoogle && !$answered;
+    if (!$verified && !$transportFailed) {
+        respond(422, ['ok' => false, 'error' => 'recaptcha']);
+    }
+}
+
 // A WhatsApp link to the visitor, from the number they gave: a local 0XX number becomes +27; anything that is not
 // 9 to 15 digits gets no link.
 $waDigits = preg_replace('/\D+/', '', $phone);

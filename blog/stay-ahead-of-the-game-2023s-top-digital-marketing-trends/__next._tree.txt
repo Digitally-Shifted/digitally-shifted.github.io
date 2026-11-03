@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/02lw07wvi9i53.css","style"]
+:HL["/_next/static/chunks/2_tvji3b98h-m.css","style"]
 :HL["/brand/fonts/Raleway-Variable.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"stay-ahead-of-the-game-2023s-top-digital-marketing-trends","s":["feed.xml"]},"h":65632,"c":"$Q3"}]]
 1:[["children",{"s":"blog","h":131136,"c":"$Q2"}]]
-0:{"b":"vbo9cBmu8deNLY-Ss5FlE","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
+0:{"b":"Q4tgT98goXw6bkHcSx98o","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
