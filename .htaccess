@@ -56,10 +56,13 @@ SetEnvIfNoCase Host "^(www\.)?digitallyshifted\.com$" DS_PRODUCTION
   Header always set Cross-Origin-Opener-Policy "same-origin"
   Header always set Strict-Transport-Security "max-age=31536000"
   # Same-origin, plus Google Analytics 4 (gtag.js and its hits, src/lib/analytics.ts) and Google reCAPTCHA
-  # v3 on the quote form (api.js from www.google.com and its core from www.gstatic.com, its beacons to
-  # www.google.com — src/lib/recaptcha.ts; the browser loads them only in a keyed build). 'unsafe-inline'
-  # is required by the inline Next.js bootstrap and React style attributes.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+  # v3 on the quote form (src/lib/recaptcha.ts; the browser loads Google only in a keyed build). reCAPTCHA
+  # origins are scoped to their /recaptcha/ paths, never the bare hosts, per Google's reCAPTCHA FAQ — and
+  # frame-src is required: api.js loads its anchor iframe from www.google.com, which default-src 'self'
+  # refused (DIG-1764 finding, 2026-11-04). Keeping the bare host out also holds Google Ads pings off
+  # www.google.com (DIG-1815 option C). 'unsafe-inline' is required by the inline Next.js bootstrap
+  # and React style attributes.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://www.google.com/recaptcha/; frame-src 'self' https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
 
   # Hashed build assets never change; everything else revalidates.
   <FilesMatch "\.(html|txt|xml|webmanifest|php)$">

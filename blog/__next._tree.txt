@@ -2,4 +2,4 @@
 :HL["/brand/fonts/Raleway-Variable.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"blog","h":64,"c":"$Q2"}]]
-0:{"b":"Q4tgT98goXw6bkHcSx98o","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"wWGAeaUoUZ8bSXaTR51qo","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
